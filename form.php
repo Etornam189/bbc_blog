@@ -25,12 +25,7 @@ $conn->close();
 
 ?>
 
-<!DOCTYPE html>
-<head>
-    <meta charset="UTF-8">
-    <title>FORM</title>
-</head>
-<body>
+
      <style>
         .form-box {
             background-color: #fff;
@@ -87,7 +82,6 @@ $conn->close();
         }
     </style>
 
-
     <form class="form-box" action="" method="post">
           <h2>MAKE A POST</h2>
        News Title: <br>
@@ -102,5 +96,4 @@ $conn->close();
        <input type="submit" name="submit" value="Post" >
 
     </form>
-</body>
-</html>
+

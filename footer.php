@@ -1,26 +1,67 @@
-<?php include 'db.php';
-
-      include 'index.php';
-
+<?php
+// Ensure $news and $categories exist to avoid warnings
+$now = isset($news[6]) ? $news[6] : ['title' => '', 'summary' => '', 'path' => ''];
+$categories = isset($categories) ? $categories : [];
 ?>
 
-<!DOCTYPE html>
-<body>
-    <head>
-    <meta charset="UTF-8">
-    <title>BBC News - Breaking news, videos and the latest top stories from the US and around the world</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-        <style>
-         @import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+<div class="card mt-5">
+  <div class="card-header">
+    <div class="row pt-5">
+      <!-- Left Column: News Info -->
+      <div class="col-md-4 text-start">
+        <h2 class="hover-underline"><?php echo htmlspecialchars($now['title']); ?></h2>
+        <p><?php echo htmlspecialchars($now['summary']); ?></p>
+        <a href="#" class="btn btn-outline-dark px-2 py-1">See more</a>
+      </div>
 
-        body{
-            font-family: "Merriweather", Times New Roman, sans-serif;
-        }
-        </style>
-</head>
+      <!-- Right Column: Image -->
+      <div class="col-md-8">
+        <?php if (!empty($now['path'])): ?>
+          <img src="<?php echo htmlspecialchars($now['path']); ?>" class="img-fluid pb-5" alt="News Image">
+        <?php endif; ?>
+      </div>
+    </div>
 
+    <hr>
+
+    <!-- BBC Branding -->
+    <div class="d-flex justify-content-center fw-bold mb-3">
+      <span class="bbc-box mx-1">B</span>
+      <span class="bbc-box mx-1">B</span>
+      <span class="bbc-box mx-1">C</span>
+    </div>
+
+    <!-- Categories -->
+    <div class="container d-flex flex-wrap gap-3 justify-content-start mb-4">
+      <?php foreach($categories as $ctg): ?>
+        <span class="copy"><?php echo htmlspecialchars($ctg['name']); ?></span>
+      <?php endforeach; ?>
+    </div>
+
+    <!-- Language Dropdown -->
+    <div class="dropdown mb-4">
+      <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        BBC in other languages:
+      </button>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else</a></li>
+      </ul>
+    </div>
+
+    <hr>
+
+    <!-- Social Media -->
+    <div class="d-flex align-items-center gap-2">
+      <p class="mb-0">Follow BBC on:</p>
+      <i class="bi bi-tiktok"></i>
+      <!-- Add more social icons if needed -->
+    </div>
+  </div>
+</div>
+
+<!-- 
 <div class="card">
   <div class="card-header">
     <div class="row pt-5">
@@ -72,4 +113,4 @@
 
 
 </body>
-</html>
+</html> -->

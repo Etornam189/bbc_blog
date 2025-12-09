@@ -49,7 +49,7 @@ while($cts = $outcome->fetch_assoc()){
         <span class="bbc-box">C</span>
   </div>  
       <div class="ms-auto d-flex gap-3">
-        <button class="bt1" type="submit">Register</button>
+        <a href="create_admin.php/.."><button class="bt1" type="submit">Register</button></a>
         <button class="bt2" type="submit">Sign Up</button>
       </div>
  </nav>
@@ -67,5 +67,3 @@ while($cts = $outcome->fetch_assoc()){
         <?php endforeach; ?>
      </div>
 </nav>
-</body>
-</html>
