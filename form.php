@@ -32,23 +32,13 @@ $conn->close();
 </head>
 <body>
      <style>
-        /* General body styling */
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #b29e9eff;
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 50px;
-        }
-
-        /* Form container */
         .form-box {
             background-color: #fff;
             padding: 30px 40px;
             border-radius: 10px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             width: 600px;
+            
         }
 
         /* Heading */
