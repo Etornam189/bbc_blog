@@ -37,15 +37,49 @@
                 <div class="row ">
                     <?php $now= $news[0]; ?>
                     <div class="col-4 fs-6 text-start">
-                    <a href="detail.php?id=<?php echo $now['id']; ?>" class="text-black text-decoration-none hover-underline "><h3 class="ftiny fw-bold "><?php echo $now['title']; ?></h3></a><p class="mtiny"><?php echo $now['summary']; ?></p>
-                    </div>  
-                    <?php $now= $news[1]; ?>
+                        <a href="detail.php?id=<?php echo $now['id']; ?>" class="text-black text-decoration-none hover-underline "><h3 class="ftiny fw-bold "><?php echo $now['title']; ?></h3></a><p class="mtiny"><?php echo $now['summary']; ?></p>
+                        </div>  
+                    
+                    
                     <div class="col-8">
-                    <a href="detail.php?id=<?php echo $now['id']; ?>">
-                    <img src="<?php echo $now['path']; ?>" width="620px" height="350px">
-                    </a>
-                    <br><br>
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
+                    <div class="carousel-inner">
+                        <?php $now= $news[2]; ?>
+                        <div class="carousel-item active">
+                            <a href="detail.php?id=<?php echo $now['id']; ?>">
+                                <img src="<?php echo $now['path']; ?>" width="620px" height="350px" class="d-block w-100" alt="...">
+                            </a>
+                        </div>
+                        <?php $now= $news[3]; ?>
+                        <div class="carousel-item">
+                            <a href="detail.php?id=<?php echo $now['id']; ?>">
+                               <img src="<?php echo $now['path']; ?>" width="620px" height="350px" class="d-block w-100" alt="...">
+                            </a>
+                        </div>
+                        <?php $now= $news[4]; ?>
+                        <div class="carousel-item">
+                            <a href="detail.php?id=<?php echo $now['id']; ?>">
+                               <img src="<?php echo $now['path']; ?>" width="620px" height="350px" class="d-block w-100" alt="...">
+                            </a>
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                    </div>
+                </div>
+                <br><br>
+                    
                 </div>
                 <div class="row g-2">
                     <?php $now=$news[2]; ?>
@@ -206,7 +240,8 @@
         
    
         <div class="row g-2">
-
+             <hr class="border-top border-3 border-dark opacity-100">
+             <div class="fw-bold">Most watched</div>
             <?php $now=$news[3]; ?>
             <div class="col">
                 <a href="detail.php?id=<?php echo $now['id']; ?>" class="text-black text-decoration-none hover-underline "><h5 class="text-start fw-bold"><?php echo $now['title']; ?></h5></a>
@@ -227,10 +262,16 @@
             <div class="col">
                 <a href="detail.php?id=<?php echo $now['id']; ?>" class="text-black text-decoration-none hover-underline "><h4 class="text-start fw-bold"><?php echo $now['title']; ?></h4></a>
             </div>
+            <hr class="border-top border-3 border-dark opacity-100">
         
         </div>
 
         <br><br>
     </div>
-        
+
+    <?php include 'footer.php'; ?>
+      
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    
     

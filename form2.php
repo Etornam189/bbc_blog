@@ -1,5 +1,6 @@
-<?php include 'db.php';
+<?php include 'db.php'; 
 
+$categoriesResult = $conn->query("SELECT * FROM categories");
 
 if(isset($_POST['submit'])) {
 
@@ -7,10 +8,11 @@ $path = $conn->real_escape_string($_POST['path']);
 $title = $conn->real_escape_string($_POST['title']);
 $summary = $conn->real_escape_string($_POST['summary']);
 $body = $conn->real_escape_string($_POST['body']);
+$category_id =$conn->real_escape_string($_POST['category_id']);
 
 
-$sql = "INSERT INTO posts (path, title, summary, body) 
-VALUES ('$path', '$title', '$summary', '$body')";
+$sql = "INSERT INTO posts (path, title, summary, body, category_id) 
+VALUES ('$path', '$title', '$summary', '$body', '$category_id')";
 
 if($conn->query($sql)){
     echo "";
@@ -82,8 +84,48 @@ $conn->close();
         }
     </style>
 
-    <form class="form-box" action="" method="post">
-          <h2>MAKE A POST</h2>
+
+    <!-- <div class="modal fade" id="createPostModal" tabindex="-1">
+        <div class="modal-dialog modal-lg"> -->
+            <!-- <div class="modal-content"> -->
+                <!-- <div class="modal-body"> -->
+                    <!-- Your form goes here -->
+                    <form class="form-box" action="" method="post">
+                    <h2>CREATE A POST</h2>
+
+                    News Title: <br>
+                    <textarea name="title" placeholder="type news title"></textarea><br><br>
+
+                    Summary: <br>
+                    <textarea name="summary" placeholder="type news summary" rows="10"></textarea><br><br>
+
+                    Content: <br>
+                    <textarea name="body" placeholder="type news body" cols="50" rows="10"></textarea><br><br>
+
+                    Image Link: <br>
+                    <textarea name="path" placeholder="paste image link" cols="50"></textarea><br><br>
+
+                   <label>Category</label>
+                    <select name="category_id" class="form-control">
+                    <?php while ($cat = $categoriesResult->fetch_assoc()): ?>
+                        <option value="<?php echo $cat['id']; ?>">
+                            <?php echo htmlspecialchars($cat['name']); ?>
+                        </option>
+                        <br><br>
+                    <?php endwhile; ?>
+                    <input type="submit" name="submit" value="Post" class="btn btn-primary me-10">
+                    </form>
+
+                <!-- </div> -->
+
+            <!-- </div>
+        </div>
+   </div> -->
+
+
+ 
+    <!-- <form class="form-box" action="" method="post">
+          <h2>CREATE A POST</h2>
        News Title: <br>
        <textarea name="title" placeholder="type news title" cols="50"></textarea><br><br>
        Summary: <br>
@@ -95,5 +137,5 @@ $conn->close();
        <br><br>
        <input type="submit" name="submit" value="Post" >
 
-    </form>
+    </form> -->
 

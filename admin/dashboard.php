@@ -2,7 +2,9 @@
 if (!isset($_SESSION['admin_id'])) {
     header("Location: login.php");
     exit;
+
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +57,7 @@ if (!isset($_SESSION['admin_id'])) {
 
             <!-- POSTS -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePosts"
+                <a class="nav-link collapsed" href="" data-toggle="collapse" data-target="#collapsePosts"
                     aria-expanded="true" aria-controls="collapsePosts">
                     <i class="fas fa-fw fa-cog"></i>
                     <span>Posts</span>
@@ -65,8 +67,15 @@ if (!isset($_SESSION['admin_id'])) {
                         <h6 class="collapse-header">Manage Posts:</h6>
 
                         <!-- Load inside dashboard.php -->
-                        <a class="collapse-item" href="dashboard.php?page=add_post">Add Post</a>
-                        <a class="collapse-item" href="dashboard.php?page=update_posts">Update Posts</a>
+                   <a href="#" class="collapse-item" 
+                        data-bs-toggle="modal" 
+                        data-bs-target="#createPostModal"
+                        onclick="event.preventDefault();">
+                        Add Post
+                    </a>
+
+                                          
+                    <a class="collapse-item" href="dashboard.php?page=update_posts">Update Posts</a>
                     </div>
                 </div>
             </li>
@@ -378,11 +387,7 @@ if (!isset($_SESSION['admin_id'])) {
 
                         $page = $_GET['page'];
 
-                        if ($page == 'add_post') {
-                            include '../form.php';
-                        }
-
-                        elseif ($page == 'update_posts') {
+                        if($page == 'update_posts') {
                             include 'tables.php';
                         }
 
@@ -823,6 +828,10 @@ if (!isset($_SESSION['admin_id'])) {
     <!-- Page level custom scripts -->
     <script src="js/demo/chart-area-demo.js"></script>
     <script src="js/demo/chart-pie-demo.js"></script>
+
+     <?php include 'form.php'; ?>
+     
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

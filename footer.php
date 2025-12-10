@@ -9,16 +9,14 @@ $categories = isset($categories) ? $categories : [];
     <div class="row pt-5">
       <!-- Left Column: News Info -->
       <div class="col-md-4 text-start">
-        <h2 class="hover-underline"><?php echo htmlspecialchars($now['title']); ?></h2>
-        <p><?php echo htmlspecialchars($now['summary']); ?></p>
-        <a href="#" class="btn btn-outline-dark px-2 py-1">See more</a>
+        <h2 class="hover-underline">sign up to News Briefing</h2>
+        <p>News and expert analysis for every schedule. Get morning and evening editions of our flagships newsletter in your inbox.</p>
+        <a href="create_admin.php\.." class="btn btn-outline-dark px-2 py-1">See more</a>
       </div>
 
       <!-- Right Column: Image -->
       <div class="col-md-8">
-        <?php if (!empty($now['path'])): ?>
-          <img src="<?php echo htmlspecialchars($now['path']); ?>" class="img-fluid pb-5" alt="News Image">
-        <?php endif; ?>
+        <img src="assets\FOOTER.webp" style="width: 800px; height:470px;">
       </div>
     </div>
 
