@@ -32,6 +32,8 @@
 
 
     <div class="container pt-5 t-center">
+        <h2 class="text-center text-danger fw-bold">NEWS</h2>
+        <br><br>
         <div class="row align-items-start ">
             <div class="row col-9">
                 <div class="row ">
@@ -49,19 +51,19 @@
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
                     <div class="carousel-inner">
-                        <?php $now= $news[2]; ?>
+                        <?php $now= $news[0]; ?>
                         <div class="carousel-item active">
                             <a href="detail.php?id=<?php echo $now['id']; ?>">
                                 <img src="<?php echo $now['path']; ?>" width="620px" height="350px" class="d-block w-100" alt="...">
                             </a>
                         </div>
-                        <?php $now= $news[3]; ?>
+                        <?php $now= $news[2]; ?>
                         <div class="carousel-item">
                             <a href="detail.php?id=<?php echo $now['id']; ?>">
                                <img src="<?php echo $now['path']; ?>" width="620px" height="350px" class="d-block w-100" alt="...">
                             </a>
                         </div>
-                        <?php $now= $news[4]; ?>
+                        <?php $now= $news[3]; ?>
                         <div class="carousel-item">
                             <a href="detail.php?id=<?php echo $now['id']; ?>">
                                <img src="<?php echo $now['path']; ?>" width="620px" height="350px" class="d-block w-100" alt="...">
@@ -82,7 +84,7 @@
                     
                 </div>
                 <div class="row g-2">
-                    <?php $now=$news[2]; ?>
+                    <?php $now=$news[4]; ?>
                     <div class="col-3">
                         <a href="detail.php?id=<?php echo $now['id']; ?>"><img src="<?php echo $now['path']; ?>" width="220px" height="145px"></a>
                         <a href="detail.php?id=<?php echo $now['id']; ?>" class="text-black text-decoration-none "></a>
@@ -90,7 +92,7 @@
                     <hr>
                     <br><br>
                     </div>
-                    <?php $now=$news[3]; ?>
+                    <?php $now=$news[5]; ?>
                     <div class="col-3">
                         <a href="detail.php?id=<?php echo $now['id']; ?>"><img src="<?php echo $now['path']; ?>" width="220px" height="145px"></a>
                         <a href="detail.php?id=<?php echo $now['id']; ?>" class="text-black text-decoration-none hover-underline "><h4 class="text-start fw-bold"><?php echo $now['title']; ?></h4></a>
@@ -98,7 +100,7 @@
                     <hr>
                     <br><br>
                     </div>
-                    <?php $now=$news[4]; ?>
+                    <?php $now=$news[6]; ?>
                     <div class="col-3 ">
                        <a href="detail.php?id=<?php echo $now['id']; ?>"><img src="<?php echo $now['path']; ?>" width="220px" height="145px"></a>
                        <a href="detail.php?id=<?php echo $now['id']; ?>" class="text-black text-decoration-none hover-underline "><h4 class="text-start fw-bold"><?php echo $now['title']; ?></h4></a>
@@ -106,7 +108,7 @@
                     <hr>
                     <br><br>
                     </div>
-                    <?php $now=$news[5]; ?>
+                    <?php $now=$news[7]; ?>
                     <div class="col-3">
                         <a href="detail.php?id=<?php echo $now['id']; ?>"><img src="<?php echo $now['path']; ?>" width="220px" height="145px"></a>
                         <a href="detail.php?id=<?php echo $now['id']; ?>" class="text-black text-decoration-none hover-underline "><h4 class="text-start fw-bold"><?php echo $now['title']; ?></h4></a>
@@ -122,20 +124,20 @@
 
 
             <div class="col-sm-3">
-                <?php $now=$news[6]; ?>
+                <?php $now=$news[1]; ?>
                 <div class="text-start fs-6">
                     <a href="detail.php?id=<?php echo $now['id']; ?>"><img src="<?php echo $now['path']; ?>" width="300px" height="145px"></a>
                     <a href="detail.php?id=<?php echo $now['id']; ?>" class="text-black text-decoration-none hover-underline "><h4 class="text-start fw-bold"><?php echo $now['title']; ?></h4></a>
                     <p class="mtiny"><?php echo $now['summary']; ?><p>
                 <hr>
                 </div>
-                <?php $now= $news[7]; ?>
+                <?php $now= $news[8]; ?>
                 <div class="text-start fs-6">
                     <a href="detail.php?id=<?php echo $now['id']; ?>" class="text-black text-decoration-none hover-underline "><h4 class="text-start fw-bold"><?php echo $now['title']; ?></h4></a>
                     <p class="mtiny"><?php echo $now['summary']; ?></p>
                 <hr>
                 </div>
-                 <?php $now= $news[8]; ?>
+                 <?php $now= $news[9]; ?>
                 <div class="text-start fs-6">
                     <a href="detail.php?id=<?php echo $now['id']; ?>" class="text-black text-decoration-none hover-underline "><h4 class="text-start fw-bold"><?php echo $now['title']; ?></h4></a>
                     <p class="mtiny"><?php echo $now['summary']; ?></p>
@@ -146,10 +148,6 @@
         </div>
         
         <div class="row g-2">
-            <?php $now=$news[9]; ?>
-            <div class="col">
-                <a href="detail.php?id=<?php echo $now['id']; ?>" class="text-black text-decoration-none hover-underline "><h5 class="text-start fw-bold"><?php echo $now['title']; ?></h5></a>
-            </div>
             <?php $now=$news[10]; ?>
             <div class="col">
                 <a href="detail.php?id=<?php echo $now['id']; ?>" class="text-black text-decoration-none hover-underline "><h5 class="text-start fw-bold"><?php echo $now['title']; ?></h5></a>
@@ -160,9 +158,13 @@
             </div>
             <?php $now=$news[12]; ?>
             <div class="col">
-                <a href="detail.php?id=<?php echo $now['id']; ?>" class="text-black text-decoration-none  "><h5 class="text-start fw-bold"><?php echo $now['title']; ?></h5></a>
+                <a href="detail.php?id=<?php echo $now['id']; ?>" class="text-black text-decoration-none hover-underline "><h5 class="text-start fw-bold"><?php echo $now['title']; ?></h5></a>
             </div>
             <?php $now=$news[13]; ?>
+            <div class="col">
+                <a href="detail.php?id=<?php echo $now['id']; ?>" class="text-black text-decoration-none  "><h5 class="text-start fw-bold"><?php echo $now['title']; ?></h5></a>
+            </div>
+            <?php $now=$news[14]; ?>
             <div class="col">
                 <a href="detail.php?id=<?php echo $now['id']; ?>" class="text-black text-decoration-none hover-underline "><h4 class="text-start fw-bold"><?php echo $now['title']; ?></h4></a>
             </div>
@@ -182,11 +184,11 @@
         <div class="row align-items-start ">
             <div class="row col-9">
                 <div class="row ">
-                    <?php $now= $news[14]; ?>
+                    <?php $now= $news[15]; ?>
                     <div class="col-4 fs-6 text-start">
                     <a href="detail.php?id=<?php echo $now['id']; ?>" class="text-black text-decoration-none hover-underline "><h3 class="ftiny fw-bold "><?php echo $now['title']; ?></h3></a><p class="mtiny"><?php echo $now['summary']; ?></p>
                     </div>  
-                    <?php $now= $news[15]; ?>
+                    <?php $now= $news[16]; ?>
                     <div class="col-8">
                     <a href="detail.php?id=<?php echo $now['id']; ?>">
                     <img src="<?php echo $now['path']; ?>" width="620px" height="350px">
@@ -195,7 +197,7 @@
                     </div>
                 </div>
                 <div class="row g-2">
-                    <?php $now=$news[0]; ?>
+                    <?php $now=$news[17]; ?>
                     <div class="col-6">
                         <a href="detail.php?id=<?php echo $now['id']; ?>"><img src="<?php echo $now['path']; ?>" width="460px" height="250px"></a>
                         <br><br>
@@ -204,7 +206,7 @@
                     <hr>
                     <br><br>
                     </div>
-                    <?php $now=$news[1]; ?>
+                    <?php $now=$news[18]; ?>
                     <div class="col-6">
                         <a href="detail.php?id=<?php echo $now['id']; ?>"><img src="<?php echo $now['path']; ?>" width="460px" height="250px"></a>
                         <br><br>
@@ -242,6 +244,7 @@
         <div class="row g-2">
              <hr class="border-top border-3 border-dark opacity-100">
              <div class="fw-bold">Most watched</div>
+             <br><br>
             <?php $now=$news[3]; ?>
             <div class="col">
                 <a href="detail.php?id=<?php echo $now['id']; ?>" class="text-black text-decoration-none hover-underline "><h5 class="text-start fw-bold"><?php echo $now['title']; ?></h5></a>
@@ -262,12 +265,97 @@
             <div class="col">
                 <a href="detail.php?id=<?php echo $now['id']; ?>" class="text-black text-decoration-none hover-underline "><h4 class="text-start fw-bold"><?php echo $now['title']; ?></h4></a>
             </div>
-            <hr class="border-top border-3 border-dark opacity-100">
         
         </div>
 
         <br><br>
+        
+        <hr class="border-top border-3 border-dark opacity-100">
+        <div class="fw-bold">Also in News</div>
+        <br><br>
+        </div>
+   
     </div>
+
+    <div class="container pt-5 t-center">
+        <div class="row align-items-start ">
+            <div class="row col-9">
+                <div class="row ">
+                    <?php $now= $news[5]; ?>
+                    <div class="col-4 fs-6 text-start">
+                    <a href="detail.php?id=<?php echo $now['id']; ?>" class="text-black text-decoration-none hover-underline "><h3 class="ftiny fw-bold "><?php echo $now['title']; ?></h3></a><p class="mtiny"><?php echo $now['summary']; ?></p>
+                    </div>  
+                    <?php $now= $news[20]; ?>
+                    <div class="col-8">
+                    <a href="detail.php?id=<?php echo $now['id']; ?>">
+                    <img src="<?php echo $now['path']; ?>" width="620px" height="350px">
+                    </a>
+                    <br><br>
+                    </div>
+                </div>
+                <div class="row g-2">
+                    <?php $now=$news[3]; ?>
+                    <div class="col-4">
+                        <a href="detail.php?id=<?php echo $now['id']; ?>"><img src="<?php echo $now['path']; ?>" width="300px" height="200px"></a>
+                        <br><br>
+                        <a href="detail.php?id=<?php echo $now['id']; ?>" class="text-black text-decoration-none "></a>
+                        <h4 class="text-start fw-bold"><?php echo $now['title']; ?></h4><p class="mtiny"><?php echo $now['summary']; ?><p>
+                    <hr>
+                    <br><br>
+                    </div>
+                    <?php $now=$news[18]; ?>
+                    <div class="col-4">
+                        <a href="detail.php?id=<?php echo $now['id']; ?>"><img src="<?php echo $now['path']; ?>" width="300px" height="200px"></a>
+                        <br><br>
+                        <a href="detail.php?id=<?php echo $now['id']; ?>" class="text-black text-decoration-none hover-underline "><h4 class="text-start fw-bold"><?php echo $now['title']; ?></h4></a>
+                        <p class="mtiny text-start"><?php echo $now['summary']; ?><p>
+                    <hr>
+                    <br><br>
+                    </div>
+                    <?php $now=$news[19]; ?>
+                    <div class="col-4">
+                        <a href="detail.php?id=<?php echo $now['id']; ?>"><img src="<?php echo $now['path']; ?>" width="300px" height="200px"></a>
+                        <br><br>
+                        <a href="detail.php?id=<?php echo $now['id']; ?>" class="text-black text-decoration-none hover-underline "><h4 class="text-start fw-bold"><?php echo $now['title']; ?></h4></a>
+                        <p class="mtiny text-start"><?php echo $now['summary']; ?><p>
+                    <hr>
+                    <br><br>
+                    </div>
+                <br><br>
+                </div>
+               
+            </div>
+
+
+
+            <div class="col-sm-3">
+                <?php $now=$news[1]; ?>
+                <div class="text-start fs-6">
+                    <a href="detail.php?id=<?php echo $now['id']; ?>"><img src="<?php echo $now['path']; ?>" width="300px" height="145px"></a>
+                    <a href="detail.php?id=<?php echo $now['id']; ?>" class="text-black text-decoration-none hover-underline "><h4 class="text-start fw-bold"><?php echo $now['title']; ?></h4></a>
+                    <p class="mtiny"><?php echo $now['summary']; ?><p>
+                <hr>
+                </div>
+                <?php $now= $news[8]; ?>
+                <div class="text-start fs-6">
+                    <a href="detail.php?id=<?php echo $now['id']; ?>" class="text-black text-decoration-none hover-underline "><h4 class="text-start fw-bold"><?php echo $now['title']; ?></h4></a>
+                    <p class="mtiny"><?php echo $now['summary']; ?></p>
+                <hr>
+                </div>
+                 <?php $now= $news[9]; ?>
+                <div class="text-start fs-6">
+                    <a href="detail.php?id=<?php echo $now['id']; ?>" class="text-black text-decoration-none hover-underline "><h4 class="text-start fw-bold"><?php echo $now['title']; ?></h4></a>
+                    <p class="mtiny"><?php echo $now['summary']; ?></p>
+                <hr>
+                <br><br>
+                </div>
+            </div>
+        </div>
+
+        <br><br>
+        
+    </div>
+    
 
     <?php include 'footer.php'; ?>
       

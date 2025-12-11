@@ -23,14 +23,14 @@ $categories = isset($categories) ? $categories : [];
     <hr>
 
     <!-- BBC Branding -->
-    <div class="d-flex justify-content-center fw-bold mb-3">
+    <div class="d-flex justify-content-left fw-bold mb-3">
       <span class="bbc-box mx-1">B</span>
       <span class="bbc-box mx-1">B</span>
       <span class="bbc-box mx-1">C</span>
     </div>
 
     <!-- Categories -->
-    <div class="container d-flex flex-wrap gap-3 justify-content-start mb-4">
+    <div class="container d-flex flex-wrap gap-3 justify-content-left mb-4">
       <?php foreach($categories as $ctg): ?>
         <span class="copy"><?php echo htmlspecialchars($ctg['name']); ?></span>
       <?php endforeach; ?>
@@ -42,9 +42,23 @@ $categories = isset($categories) ? $categories : [];
         BBC in other languages:
       </button>
       <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else</a></li>
+        <div class="row">
+          <div class="col-md-4">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else</a></li>
+         </div>
+          <div class="col-md-4">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else</a></li>
+         </div>
+          <div class="col-md-4">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else</a></li>
+         </div>
+        </div>
       </ul>
     </div>
 

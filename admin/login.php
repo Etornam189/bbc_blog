@@ -15,6 +15,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $admin = $result->fetch_assoc();
 
         if (password_verify($password, $admin['password'])) {
+            $_SESSION['username'] = $admin['username'];       
+            $_SESSION['email'] = $admin['email'];  
             $_SESSION['admin_id'] = $admin['id'];
             header("Location: dashboard.php");
             exit;
@@ -41,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 </head>
 
- <style>
+ <!-- <style>
     body {
         font-family: Arial, sans-serif;
         background-color: #959590ff;
@@ -49,17 +51,46 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         align-items: flex-start;
         margin-top: 200px;
     }
-    </style>
+    </style> -->
 
 <body>
-    <div class="container align-items-center" style="margin-left: 80px; margin-right:100px">
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h4 class="card-title text-center mb-4">Admin Login</h4>
+                    <form method="POST">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" name="username" class="form-control" id="username" required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="input-group">
+                                <input type="password" name="password" class="form-control" id="password" required>
+                                <button type="button" class="btn btn-outline-secondary" onclick="togglePassword()">👁️</button>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100">Login</button>
+                    </form><br><b>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <!-- <div class="container align-items-center" style="margin-left: 80px; margin-right:100px">
         <form method="POST" action="login.php" class="text-center">
            <p class="pt-30 fw-bold">Admin Login</p>
             Username: <input type="text" name="username"><br><br>
             password: <input type="password" name="password"><br><br>
            <button type="submit" class="btn btn-primary">Login</button>
         </form>
-    </div>
+    </div> -->
 
 </body>
 </html

@@ -59,6 +59,9 @@ $news = $result->fetch_assoc();
     <div class="col-2">
     </div>  
 </div>
+<div class="row">
+    
+</div>
 
 </body>
 </html>

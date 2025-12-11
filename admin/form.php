@@ -25,13 +25,16 @@ $conn->close();
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
 
-            <!-- Modal Header with Close Button -->
-            <div class="modal-header">
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-
-            <div class="modal-body">
+            <!-- <div class="modal-body"> -->
+                
                 <form class="form-box" action="" method="post">
+                    <style>
+                        .close-lg {
+                            width: 5rem;
+                            height: 2rem;
+                        }
+                    </style>
+                    <button type="button" class="btn-close bg-success close-lg" data-bs-dismiss="modal">Dismiss</button>
                     <h2 style="text-align:center; margin-bottom:20px;">CREATE A POST</h2>
 
                     <label>News Title:</label>
