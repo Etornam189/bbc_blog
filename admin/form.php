@@ -7,6 +7,13 @@ if (isset($_POST['submit'])) {
     $summary = $conn->real_escape_string($_POST['summary']);
     $body = $conn->real_escape_string($_POST['body']);
 
+    if ( isset($title) && $title == null){
+        $_SESSION['display_error'] = "Please provide a title";
+        exit();
+
+     }
+
+
     $sql = "INSERT INTO posts (path, title, summary, body) 
             VALUES ('$path', '$title', '$summary', '$body')";
 
@@ -28,13 +35,7 @@ $conn->close();
             <!-- <div class="modal-body"> -->
                 
                 <form class="form-box" action="" method="post">
-                    <style>
-                        .close-lg {
-                            width: 5rem;
-                            height: 2rem;
-                        }
-                    </style>
-                    <button type="button" class="btn-close bg-success close-lg" data-bs-dismiss="modal">Dismiss</button>
+                    <button type="button" class="btn btn-primary btn-close close-lg" data-bs-dismiss="modal">Dismiss</button>
                     <h2 style="text-align:center; margin-bottom:20px;">CREATE A POST</h2>
 
                     <label>News Title:</label>

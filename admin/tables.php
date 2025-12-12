@@ -20,7 +20,7 @@ $result = $conn->query($sql);
             </tr>
         </thead>
 
-        <tbody>
+        <   body>
             <?php while($row = $result->fetch_assoc()): ?>
             <tr>
                 <td><?php echo $row['title']; ?></td>

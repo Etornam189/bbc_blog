@@ -175,6 +175,7 @@ if (!isset($_SESSION['admin_id'])) {
             <!-- Main Content -->
             <div id="content">
 
+
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
 
@@ -442,6 +443,9 @@ if (!isset($_SESSION['admin_id'])) {
                         <?php
                     }
                     ?>
+
+                     <h1 class="w-100 h-20 bg-red"><?php echo isset($_SESSION['display_error']) ? $_SESSION['display_error'] : '' ?></h1>
+
 
 
                     </div>
